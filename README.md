@@ -8,9 +8,11 @@ Run `npm ci`, set `ADMIN_PASSWORD` in a private `.dev.vars` file, then run `npm 
 
 ## Publish shareable links
 
-1. Sign in with `npx wrangler login` and create the database with `npx wrangler d1 create poll-room`. Set its returned ID in `wrangler.jsonc`, replacing the placeholder.
-2. Run `npx wrangler d1 migrations apply poll-room --remote` and `npx wrangler secret put ADMIN_PASSWORD`. Enter a strong unique production password at the prompt. Do not enable `LOCAL_PREVIEW` in production.
-3. Run `npm run deploy`. Sign in on the deployed HTTPS URL, create a poll, and copy its voting link. Localhost links are not public. Use **Results & link** to check the tally; multi-select counts can sum to more than the ballot total.
+Production: https://sooral-premier-league-polls.sooral-premier-league.workers.dev (Indian networks only).
+
+1. Sign in to the owning Cloudflare account with `npx wrangler login`. The `production` environment in `wrangler.jsonc` points to the live D1 database; local preview uses a separate database.
+2. Apply new migrations with `npx wrangler d1 migrations apply DB --env production --remote`. To rotate the admin password, run `npx wrangler secret put ADMIN_PASSWORD --env production`. Do not enable `LOCAL_PREVIEW` in production.
+3. Deploy updates with `npx wrangler deploy --env production`. Sign in on the deployed HTTPS URL, create a poll, and copy its voting link. Localhost links are not public. Use **Results & link** to check the tally; multi-select counts can sum to more than the ballot total.
 
 ## Voting limits
 

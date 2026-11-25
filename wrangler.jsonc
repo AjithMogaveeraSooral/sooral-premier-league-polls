@@ -3,5 +3,6 @@
   "main": "worker.js",
   "compatibility_date": "2025-12-01",
   "assets": {"directory": "./public", "html_handling": "none", "binding": "ASSETS", "run_worker_first": true},
-  "d1_databases": [{"binding": "DB", "database_name": "poll-room", "database_id": "00000000-0000-0000-0000-000000000000"}]
+  "d1_databases": [{"binding": "DB", "database_name": "poll-room", "database_id": "00000000-0000-0000-0000-000000000000"}],
+  "env": {"production": {"name": "sooral-premier-league-polls", "workers_dev": true, "d1_databases": [{"binding": "DB", "database_name": "sooral-premier-league-polls", "database_id": "af6579a4-11e4-49c5-a994-e9fcbb69c2e7"}]}}
 }
