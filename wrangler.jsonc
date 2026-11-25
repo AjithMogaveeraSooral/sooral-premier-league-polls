@@ -1,0 +1,7 @@
+{
+  "name": "poll-room",
+  "main": "worker.js",
+  "compatibility_date": "2025-12-01",
+  "assets": {"directory": "./public", "html_handling": "none", "binding": "ASSETS", "run_worker_first": true},
+  "d1_databases": [{"binding": "DB", "database_name": "poll-room", "database_id": "00000000-0000-0000-0000-000000000000"}]
+}
